@@ -54,8 +54,6 @@ export function EditableMetricsCard() {
     if (savedEmail) {
       setUserEmail(savedEmail)
       loadDataFromSupabase(savedEmail)
-    } else {
-      setShowEmailDialog(true)
     }
   }, [])
 
