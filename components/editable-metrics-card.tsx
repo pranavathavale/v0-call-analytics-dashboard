@@ -53,20 +53,9 @@ export function EditableMetricsCard() {
 
     if (savedEmail) {
       setUserEmail(savedEmail)
-      // Fetch data from Supabase
       loadDataFromSupabase(savedEmail)
     } else {
-      // Try to load from localStorage as fallback
-      const savedData = localStorage.getItem("chartData")
-      if (savedData) {
-        try {
-          const parsed = JSON.parse(savedData)
-          setChartData(parsed)
-          setEditValues(parsed)
-        } catch (error) {
-          console.error("[v0] Error parsing saved data:", error)
-        }
-      }
+      setShowEmailDialog(true)
     }
   }, [])
 
